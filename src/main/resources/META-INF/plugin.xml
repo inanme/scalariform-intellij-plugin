@@ -1,8 +1,8 @@
-<idea-plugin version="2">
+<idea-plugin>
     <id>com.thesamet.intellij.ScariformFormat</id>
     <name>Scalariform</name>
     <version>0.2</version>
-    <vendor email="nadav@thesamet.com" url="http://www.thesamet.com">Nadav S. Samet</vendor>
+    <vendor email="inanme@gmail.com" url="http://mertinan.com">Mert Inan</vendor>
 
     <description><![CDATA[
       Formats Scala sources using Scalariform.
@@ -35,12 +35,14 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.thesamet.intellij.ScalariformState"/>
-        <applicationConfigurable id="Scalariform" groupId="language" instance="com.thesamet.intellij.ScalariformApplicationComponent" />
+        <applicationConfigurable id="Scalariform" groupId="language"
+                                 instance="com.thesamet.intellij.ScalariformApplicationComponent"/>
     </extensions>
 
     <actions>
         <!-- Add your actions here -->
-        <action id="ScalariformIdea.com.thesamet.intellij.ScalariformFormatAction" class="com.thesamet.intellij.ScalariformFormatAction"
+        <action id="ScalariformIdea.com.thesamet.intellij.ScalariformFormatAction"
+                class="com.thesamet.intellij.ScalariformFormatAction"
                 text="Format with _Scalariform" description="Formats the current file with Scalariform">
             <add-to-group group-id="CodeFormatGroup" anchor="first"/>
             <keyboard-shortcut keymap="$default" first-keystroke="meta alt S"/>

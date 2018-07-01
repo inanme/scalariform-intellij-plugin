@@ -6,113 +6,113 @@ import javax.swing.*;
  * Created by nadavsr on 5/31/14.
  */
 public class ScalariformConfigurationForm {
-    private JCheckBox alignParametersCheckBox;
-    private JCheckBox alignSingleLineCaseCheckBox;
-    private JCheckBox compactControlReadabilityCheckBox;
-    private JCheckBox compactStringConcatenationCheckBox;
-    private JCheckBox doubleIndentClassDeclarationCheckBox;
-    private JCheckBox formatXMLCheckBox;
-    private JCheckBox indentPackageBlocksCheckBox;
-    private JCheckBox indentWithTabsCheckBox;
-    private JCheckBox multilineScalaDocCommentsStartCheckBox;
-    private JCheckBox preserveDanglingCloseParenthesisCheckBox;
-    private JCheckBox placeScalaDocAsterisksBeneathCheckBox;
-    private JCheckBox preserveSpaceBeforeArgumentsCheckBox;
-    private JCheckBox rewriteArrowSymbolsCheckBox;
-    private JCheckBox spaceBeforeColonCheckBox;
-    private JCheckBox spaceInsideParenthesisCheckBox;
-    private JCheckBox spacesWithinPatternBindersCheckBox;
-    private JPanel rootComponent;
-    private JCheckBox indentLocalDefsCheckBox;
-    private JCheckBox spaceInsideBracketsCheckBox;
-    private JTextField indentSpaces;
-    private JTextField maxArrowIndent;
+    JCheckBox alignParameters;
+    JCheckBox alignSingleLineCase;
+    JCheckBox compactControlReadability;
+    JCheckBox compactStringConcatenation;
+    JCheckBox doubleIndentConstructorArguments;
+    JCheckBox formatXML;
+    JCheckBox indentPackageBlocks;
+    JCheckBox indentWithTabs;
+    JCheckBox multilineScalaDocCommentsStartOnFirstLine;
+    JCheckBox danglingCloseParenthesis;
+    JCheckBox placeScaladocAsterisksBeneathSecondAsterisk;
+    JCheckBox preserveSpaceBeforeArguments;
+    JCheckBox rewriteArrowSymbols;
+    JCheckBox spaceBeforeColon;
+    JCheckBox spaceInsideParenthesis;
+    JCheckBox spacesWithinPatternBinders;
+    JCheckBox indentLocalDefs;
+    JCheckBox spaceInsideBrackets;
+    JTextField maxArrowIndent;
+    JTextField indentSpaces;
+
+    JPanel rootComponent;
 
     public JPanel getRootComponent() {
         return rootComponent;
     }
 
     public void setData(ScalariformState data) {
-        alignParametersCheckBox.setSelected(data.isAlignParameters());
-        alignSingleLineCaseCheckBox.setSelected(data.isAlignSingleLineCase());
-        compactControlReadabilityCheckBox.setSelected(data.isCompactControlReadability());
-        compactStringConcatenationCheckBox.setSelected(data.isCompactStringConcatenation());
-        doubleIndentClassDeclarationCheckBox.setSelected(data.isDoubleIndentClassDeclaration());
-        formatXMLCheckBox.setSelected(data.isFormatXML());
-        indentPackageBlocksCheckBox.setSelected(data.isIndentPackageBlocks());
-        indentWithTabsCheckBox.setSelected(data.isIndentWithTabs());
-        multilineScalaDocCommentsStartCheckBox.setSelected(data.isMultilineScalaDocCommentsStartOnFirstLine());
-        preserveDanglingCloseParenthesisCheckBox.setSelected(data.isPreserveDanglineCloseParenthesis());
-        placeScalaDocAsterisksBeneathCheckBox.setSelected(data.isPlaceScalaDocAsteriskBeneathSecondAsterisk());
-        preserveSpaceBeforeArgumentsCheckBox.setSelected(data.isPreserveSpaceBeforeArguments());
-        rewriteArrowSymbolsCheckBox.setSelected(data.isRewriteArrowSymbols());
-        spaceBeforeColonCheckBox.setSelected(data.isSpaceBeforeColon());
-        spaceInsideParenthesisCheckBox.setSelected(data.isSpaceInsideParenthesis());
-        spacesWithinPatternBindersCheckBox.setSelected(data.isSpacesWithinPatternBinders());
-        indentSpaces.setText(data.getIndentSpaces().toString());
-        maxArrowIndent.setText(data.getAlignSingleLineCaseStatementsMaxArrowIndent().toString());
-        indentLocalDefsCheckBox.setSelected(data.isIndentLocalDefs());
-        spaceInsideBracketsCheckBox.setSelected(data.isSpaceInsideBrackets());
+        alignParameters.setSelected(data.alignParameters);
+        alignSingleLineCase.setSelected(data.alignSingleLineCase);
+        compactControlReadability.setSelected(data.compactControlReadability);
+        compactStringConcatenation.setSelected(data.compactStringConcatenation);
+        doubleIndentConstructorArguments.setSelected(data.doubleIndentConstructorArguments);
+        formatXML.setSelected(data.formatXML);
+        indentPackageBlocks.setSelected(data.indentPackageBlocks);
+        indentWithTabs.setSelected(data.indentWithTabs);
+        multilineScalaDocCommentsStartOnFirstLine.setSelected(data.multilineScalaDocCommentsStartOnFirstLine);
+        danglingCloseParenthesis.setSelected(data.danglingCloseParenthesis);
+        placeScaladocAsterisksBeneathSecondAsterisk.setSelected(data.placeScaladocAsterisksBeneathSecondAsterisk);
+        preserveSpaceBeforeArguments.setSelected(data.preserveSpaceBeforeArguments);
+        rewriteArrowSymbols.setSelected(data.rewriteArrowSymbols);
+        spaceBeforeColon.setSelected(data.spaceBeforeColon);
+        spaceInsideParenthesis.setSelected(data.spaceInsideParenthesis);
+        spacesWithinPatternBinders.setSelected(data.spacesWithinPatternBinders);
+        indentLocalDefs.setSelected(data.indentLocalDefs);
+        spaceInsideBrackets.setSelected(data.spaceInsideBrackets);
+        indentSpaces.setText(data.indentSpaces.toString());
+        maxArrowIndent.setText(data.maxArrowIndent.toString());
     }
 
     public void getData(ScalariformState data) {
-        data.setAlignParameters(alignParametersCheckBox.isSelected());
-        data.setAlignSingleLineCase(alignSingleLineCaseCheckBox.isSelected());
-        data.setCompactControlReadability(compactControlReadabilityCheckBox.isSelected());
-        data.setCompactStringConcatenation(compactStringConcatenationCheckBox.isSelected());
-        data.setDoubleIndentClassDeclaration(doubleIndentClassDeclarationCheckBox.isSelected());
-        data.setFormatXML(formatXMLCheckBox.isSelected());
-        data.setIndentPackageBlocks(indentPackageBlocksCheckBox.isSelected());
-        data.setIndentWithTabs(indentWithTabsCheckBox.isSelected());
-        data.setMultilineScalaDocCommentsStartOnFirstLine(multilineScalaDocCommentsStartCheckBox.isSelected());
-        data.setPreserveDanglineCloseParenthesis(preserveDanglingCloseParenthesisCheckBox.isSelected());
-        data.setPlaceScalaDocAsteriskBeneathSecondAsterisk(placeScalaDocAsterisksBeneathCheckBox.isSelected());
-        data.setPreserveSpaceBeforeArguments(preserveSpaceBeforeArgumentsCheckBox.isSelected());
-        data.setRewriteArrowSymbols(rewriteArrowSymbolsCheckBox.isSelected());
-        data.setSpaceBeforeColon(spaceBeforeColonCheckBox.isSelected());
-        data.setSpaceInsideParenthesis(spaceInsideParenthesisCheckBox.isSelected());
-        data.setSpacesWithinPatternBinders(spacesWithinPatternBindersCheckBox.isSelected());
+        data.alignParameters = alignParameters.isSelected();
+        data.alignSingleLineCase = alignSingleLineCase.isSelected();
+        data.compactControlReadability = compactControlReadability.isSelected();
+        data.compactStringConcatenation = compactStringConcatenation.isSelected();
+        data.doubleIndentConstructorArguments = doubleIndentConstructorArguments.isSelected();
+        data.formatXML = formatXML.isSelected();
+        data.indentPackageBlocks = indentPackageBlocks.isSelected();
+        data.indentWithTabs = indentWithTabs.isSelected();
+        data.multilineScalaDocCommentsStartOnFirstLine = multilineScalaDocCommentsStartOnFirstLine.isSelected();
+        data.danglingCloseParenthesis = danglingCloseParenthesis.isSelected();
+        data.placeScaladocAsterisksBeneathSecondAsterisk = placeScaladocAsterisksBeneathSecondAsterisk.isSelected();
+        data.preserveSpaceBeforeArguments = preserveSpaceBeforeArguments.isSelected();
+        data.rewriteArrowSymbols = rewriteArrowSymbols.isSelected();
+        data.spaceBeforeColon = spaceBeforeColon.isSelected();
+        data.spaceInsideParenthesis = spaceInsideParenthesis.isSelected();
+        data.spacesWithinPatternBinders = spacesWithinPatternBinders.isSelected();
+        data.indentLocalDefs = indentLocalDefs.isSelected();
+        data.spaceInsideBrackets = spaceInsideBrackets.isSelected();
         try {
-            data.setIndentSpaces(Integer.parseInt(indentSpaces.getText()));
+            data.indentSpaces = Integer.parseInt(indentSpaces.getText());
         } catch (NumberFormatException e) {
         }
         try {
-            data.setAlignSingleLineCaseStatementsMaxArrowIndent(Integer.parseInt(maxArrowIndent.getText()));
+            data.maxArrowIndent = Integer.parseInt(maxArrowIndent.getText());
         } catch (NumberFormatException e) {
         }
-        data.setIndentLocalDefs(indentLocalDefsCheckBox.isSelected());
-        data.setSpaceInsideBrackets(spaceInsideBracketsCheckBox.isSelected());
+
+
     }
 
+    /**
+     * @param data
+     * @return
+     */
     public boolean isModified(ScalariformState data) {
-        if (alignParametersCheckBox.isSelected() != data.isAlignParameters()) return true;
-        if (alignSingleLineCaseCheckBox.isSelected() != data.isAlignSingleLineCase()) return true;
-        if (compactControlReadabilityCheckBox.isSelected() != data.isCompactControlReadability()) return true;
-        if (compactStringConcatenationCheckBox.isSelected() != data.isCompactStringConcatenation()) return true;
-        if (doubleIndentClassDeclarationCheckBox.isSelected() != data.isDoubleIndentClassDeclaration()) return true;
-        if (formatXMLCheckBox.isSelected() != data.isFormatXML()) return true;
-        if (indentPackageBlocksCheckBox.isSelected() != data.isIndentPackageBlocks()) return true;
-        if (indentWithTabsCheckBox.isSelected() != data.isIndentWithTabs()) return true;
-        if (multilineScalaDocCommentsStartCheckBox.isSelected() != data.isMultilineScalaDocCommentsStartOnFirstLine())
-            return true;
-        if (preserveDanglingCloseParenthesisCheckBox.isSelected() != data.isPreserveDanglineCloseParenthesis())
-            return true;
-        if (placeScalaDocAsterisksBeneathCheckBox.isSelected() != data.isPlaceScalaDocAsteriskBeneathSecondAsterisk())
-            return true;
-        if (preserveSpaceBeforeArgumentsCheckBox.isSelected() != data.isPreserveSpaceBeforeArguments()) return true;
-        if (rewriteArrowSymbolsCheckBox.isSelected() != data.isRewriteArrowSymbols()) return true;
-        if (spaceBeforeColonCheckBox.isSelected() != data.isSpaceBeforeColon()) return true;
-        if (spaceInsideParenthesisCheckBox.isSelected() != data.isSpaceInsideParenthesis()) return true;
-        if (spacesWithinPatternBindersCheckBox.isSelected() != data.isSpacesWithinPatternBinders()) return true;
-        if (indentSpaces.getText() != null ?
-                !indentSpaces.getText().equals(data.getIndentSpaces().toString()) : data.getIndentSpaces() != null)
-            return true;
-        if (maxArrowIndent.getText() != null ?
-                !maxArrowIndent.getText().equals(data.getAlignSingleLineCaseStatementsMaxArrowIndent().toString()) :
-                data.getAlignSingleLineCaseStatementsMaxArrowIndent() != null)
-            return true;
-        if (indentLocalDefsCheckBox.isSelected() != data.isIndentLocalDefs()) return true;
-        if (spaceInsideBracketsCheckBox.isSelected() != data.isSpaceInsideBrackets()) return true;
+        //@formatter:off
+        if (alignParameters.isSelected() != data.alignParameters) return true;
+        if (alignSingleLineCase.isSelected() != data.alignSingleLineCase) return true;
+        if (compactControlReadability.isSelected() != data.compactControlReadability) return true;
+        if (compactStringConcatenation.isSelected() != data.compactStringConcatenation) return true;
+        if (doubleIndentConstructorArguments.isSelected() != data.doubleIndentConstructorArguments) return true;
+        if (formatXML.isSelected() != data.formatXML) return true;
+        if (indentPackageBlocks.isSelected() != data.indentPackageBlocks) return true;
+        if (indentWithTabs.isSelected() != data.indentWithTabs) return true;
+        if (multilineScalaDocCommentsStartOnFirstLine.isSelected() != data.multilineScalaDocCommentsStartOnFirstLine) return true;
+        if (danglingCloseParenthesis.isSelected() != data.danglingCloseParenthesis) return true;
+        if (placeScaladocAsterisksBeneathSecondAsterisk.isSelected() != data.placeScaladocAsterisksBeneathSecondAsterisk) return true;
+        if (preserveSpaceBeforeArguments.isSelected() != data.preserveSpaceBeforeArguments) return true;
+        if (rewriteArrowSymbols.isSelected() != data.rewriteArrowSymbols) return true;
+        if (spaceBeforeColon.isSelected() != data.spaceBeforeColon) return true;
+        if (spaceInsideParenthesis.isSelected() != data.spaceInsideParenthesis) return true;
+        if (spacesWithinPatternBinders.isSelected() != data.spacesWithinPatternBinders) return true;
+        if (indentLocalDefs.isSelected() != data.indentLocalDefs) return true;
+        if (spaceInsideBrackets.isSelected() != data.spaceInsideBrackets) return true;
+        if (indentSpaces.getText() != data.indentSpaces.toString()) return true;
+        if (maxArrowIndent.getText() != data.maxArrowIndent.toString()) return true;
         return false;
     }
 }

@@ -2,7 +2,6 @@ package com.thesamet.intellij;
 
 import com.intellij.openapi.components.*;
 import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -59,7 +58,7 @@ public class ScalariformApplicationComponent implements Configurable, Applicatio
     }
 
     @Override
-    public void apply() throws ConfigurationException {
+    public void apply() {
         if (form != null) {
             form.getData(state);
         }
